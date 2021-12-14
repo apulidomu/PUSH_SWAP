@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2021/12/14 14:30:44 by apulido-         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:49:46 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ int main(int argc, char **argv)
     int i;
     int x;
     int control;
-    t_list a;
-    t_list b;
-
+	t_list *a;
+	t_list *b;
+	
+	a = 0;
+	b = 0;
     control = 0;
     i = 1;
     x = 0;
@@ -36,16 +38,17 @@ int main(int argc, char **argv)
             
             if(check_space(argv[i]) == 1)
             {
-                select_num_space(argv[i]);
+                select_num_space(argv[i], &a);
             }
             else
             {
-                select_num_nospace(argv[i]);
+                select_num_nospace(argv[i], &a);
             }
             i++;
         }
 
     }
+	ft_lstiter(a);
 }
 
 int input_control(char **input)
@@ -85,13 +88,13 @@ int input_control(char **input)
     return (validate);
 }
 
-void select_num_space(char *argv)
+void select_num_space(char *argv, t_list **a)
 {
     int     i;
     int     s;
     char    *num;
     int control;
-    
+	
     control = 0;
     s = 0;
     i = 0;
@@ -102,7 +105,8 @@ void select_num_space(char *argv)
         if(argv[i] == 32)
         {
             num = ft_substr(argv, (i - s), s);
-            printf("NUM = %s:\n", num);
+			*a = full_a(num, a);
+            //printf("NUM = %s:\n", num);
             s = 0;
             i++;
         }
@@ -117,7 +121,8 @@ void select_num_space(char *argv)
         {
             num = ft_substr(argv, (i + 1), s);
             control = 1;
-            printf("NUM = %s:\n", num);
+			*a = full_a(num, a);
+            //printf("NUM = %s:\n", num);
         }
         s++;
         i--;
@@ -125,9 +130,10 @@ void select_num_space(char *argv)
   
 }
 
-void select_num_nospace(char *argv)
+void select_num_nospace(char *argv, t_list **a)
 {
-        printf("NUM = %s:\n", argv);
+	*a = full_a(argv, a);
+    //printf("NUM = %s:\n", argv);
 }
 
 int check_space(char *argv)
