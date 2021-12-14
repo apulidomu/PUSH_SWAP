@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2021/11/16 16:25:07 by alex             ###   ########.fr       */
+/*   Updated: 2021/12/14 14:30:44 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,15 @@ int main(int argc, char **argv)
     x = 0;
     if(argc > 1)
     {   
-       
-        while(argv[i] && control == 0)
+    	control = input_control(argv);
+		if(control != 0)
+		{
+			write(1, "Error\n", 7);
+			return (0);
+		}
+        while(argv[i])
         {
-            control = input_control(argv[i]);
+            
             if(check_space(argv[i]) == 1)
             {
                 select_num_space(argv[i]);
@@ -43,25 +48,40 @@ int main(int argc, char **argv)
     }
 }
 
-int input_control(char *input)
+int input_control(char **input)
 {
     int i;
     int validate;
+	int	j;
 
-    i = 0;
+	j = 0;
+    i = 1;
     validate = 0;
-    if(!input[i])
-    {
-        validate = 1;
-    }
     while(input[i])
     {
-        if(input[i] != 32 && input[i] < '0' && input[i] > '9')
-        {
-            validate = 1;
-        }
-        i++;
+        if(!input[i])
+			validate = 1;
+		printf("INPUT: %s\n", input[i]);
+		i++;
     }
+	i = 1;
+    while(input[i])
+	{	
+		j = 0;
+		while(input[i][j])
+    	{
+        	if(input[i][j] != 32 && (input[i][j] < '0' || input[i][j] > '9'))
+        	{
+            	validate = 1;
+				if(input[i][j] == '-')
+					validate = 0;
+        	}
+			printf("CHAR INPUT: %c, %d  ", input[i][j], validate);
+        	j++;
+    	}
+		i++;
+	}
+	printf("VALOR VALIDATE: %d\n", validate);	
     return (validate);
 }
 

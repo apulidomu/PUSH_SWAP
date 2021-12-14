@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/14 14:30:09 by apulido-          #+#    #+#             */
+/*   Updated: 2021/12/14 14:30:46 by apulido-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
@@ -13,19 +25,19 @@ typedef struct s_list
 
 }t_list;
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-int	    ft_atoi(const char *str);
-size_t	ft_strlen(const char *s);
-int     input_control(char *input);
-void    select_num_space(char *argv);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_front(t_list **list, t_list *new);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_newlst(int n);
-int	    ft_lstsize(t_list *lst);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+int	    	ft_atoi(const char *str);
+size_t		ft_strlen(const char *s);
+int     	input_control(char **input);
+void    	select_num_space(char *argv);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_front(t_list **list, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+t_list		*ft_newlst(int n);
+int	    	ft_lstsize(t_list *lst);
 static int	is_space(char cr);
-int check_space(char *argv);
-void select_num_nospace(char *argv);
+int 		check_space(char *argv);
+void 		select_num_nospace(char *argv);
 
 
 # endif
