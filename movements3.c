@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   slist.c                                            :+:      :+:    :+:   */
+/*   movements3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 14:29:58 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/11 17:29:28 by apulido-         ###   ########.fr       */
+/*   Created: 2022/01/11 18:30:52 by apulido-          #+#    #+#             */
+/*   Updated: 2022/01/11 18:39:03 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void ft_lstiter(t_list *lst);
 
-t_list *full_a(char *input, t_list **a)
+void reverse_rotate_rra(t_list **a)
 {
-	int num;
+	t_list *aux;
 
-	num = ft_atoi(input);
-	printf("INT : %d  ", num);
-	if (!a)
-		*a = ft_newlst(num);
-	else
+	if(ft_lstsize(*a) > 1)
 	{
-		ft_lstadd_back(a, ft_newlst(num));
-	}
-	return *(a);
-}
-void ft_lstiter(t_list *lst)
-{
-	if (lst != NULL)
-	{
-		printf("\nLista a:\n");
-		while (lst != NULL)
-		{
-			printf("%d\n", (lst)->n);
-			lst = lst->next;
-		}
+		aux = ft_lstlast(*a);
+		ft_lstadd_front(a, aux);
+		aux->next = NULL;
+		write(1, "rra\n", 4);
 	}
 }

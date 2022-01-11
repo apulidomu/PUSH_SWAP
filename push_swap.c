@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2021/12/14 15:49:46 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/11 18:37:24 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ int main(int argc, char **argv)
         }
 
     }
+	ft_lstiter(a);
+	//swap_sa(&a);
+	//rotate_ra(&a);
+	reverse_rotate_rra(&a);
 	ft_lstiter(a);
 }
 
