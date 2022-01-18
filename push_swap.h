@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:30:09 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/11 18:36:48 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:28:28 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,17 @@ void 		ft_lstiter(t_list *lst);
 int 		check_space(char *argv);
 void 		select_num_nospace(char *argv, t_list **a);
 
-void swap_sa(t_list **a);
-void push_pb(t_list **a, t_list **b);
-void rotate_ra(t_list **a);
-void reverse_rotate_rra(t_list **a);
+void 		swap_sa(t_list **a);
+void 		swap_sb(t_list **b);
+void 		swap_ss(t_list **a, t_list **b);
+void 		push_pa(t_list **a, t_list **b);
+void 		push_pb(t_list **a, t_list **b);
+void 		rotate_ra(t_list **a);
+void 		rotate_rb(t_list **b);
+void 		rotate_rr(t_list **a, t_list **b);
+void 		reverse_rotate_rra(t_list **a);
+void 		reverse_rotate_rrb(t_list **b);
+void 		reverse_rotate_rrr(t_list **a, t_list **b);
 
 
 # endif

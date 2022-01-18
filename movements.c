@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:24:42 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/11 18:30:20 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:35:59 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,19 @@ void swap_sb(t_list **b)
 
 void swap_ss(t_list **a, t_list **b)
 {
+	t_list *aux;
+	t_list *aux2;
+	
 	if(ft_lstsize(*a) > 1 && ft_lstsize(*b) > 1)
 	{
-		swap_sa(a);
-		swap_sb(b);
+		aux = *a; 
+		*a = (*a)->next;
+		aux->next = (*a)->next;
+		(*a)->next = aux;
+		aux2 = *b; 
+		*b = (*b)->next;
+		aux2->next = (*b)->next;
+		(*b)->next = aux2;
 		write(1, "ss\n", 3);
 	}
 }

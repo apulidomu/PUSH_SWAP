@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2022/01/11 18:37:24 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:31:06 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main(int argc, char **argv)
 {
-    int i;
-    int x;
-    int control;
-	t_list *a;
-	t_list *b;
+    int 	i;
+    int 	x;
+    int 	control;
+	t_list 	*a;
+	t_list 	*b;
 	
 	a = 0;
 	b = 0;
@@ -49,10 +49,13 @@ int main(int argc, char **argv)
 
     }
 	ft_lstiter(a);
-	//swap_sa(&a);
-	//rotate_ra(&a);
-	reverse_rotate_rra(&a);
+	push_pb(&a, &b);
+	push_pb(&a, &b);
 	ft_lstiter(a);
+	ft_lstiter(b);
+	reverse_rotate_rrr(&a, &b);
+	ft_lstiter(a);
+	ft_lstiter(b);
 }
 
 int input_control(char **input)

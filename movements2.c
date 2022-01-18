@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:15:13 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/11 18:29:42 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:34:12 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,18 @@ void rotate_rb(t_list **b)
 
 void rotate_rr(t_list **a, t_list **b)
 {
+	t_list *aux;
+	t_list *aux2;
 	if(ft_lstsize(*a) > 1 && ft_lstsize(*b) > 1)
 	{
-		rotate_ra(a);
-		rotate_rb(b);
+		aux = *a;
+		ft_lstadd_back(a, aux);
+		*a = (*a)->next;
+		aux->next = NULL;
+		aux2 = *b;
+		ft_lstadd_back(b, aux2);
+		*b = (*b)->next;
+		aux2->next = NULL;
 		write(1, "rr\n", 3);
 	}
 }
