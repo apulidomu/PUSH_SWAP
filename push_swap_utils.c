@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:28:43 by alex              #+#    #+#             */
-/*   Updated: 2022/01/18 16:35:48 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/19 17:12:47 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	ft_atoi(const char *str)
 	{
 		num = num * 10 + (str[i] - '0');
 		if (num > 2147483647 && sign == 1)
-			return (-1);
+			error_msg();
 		if (num > 2147483648 && sign == -1)
-			return (0);
+			error_msg();
 		i++;
 	}
 	return (num * sign);
@@ -83,4 +83,10 @@ size_t	ft_strlen(const char *s)
 		i++;
 	}
 	return (i);
+}
+
+void error_msg()
+{
+	write(1, "Error\n", 7);
+	exit(-1);
 }

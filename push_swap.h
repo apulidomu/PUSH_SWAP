@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:30:09 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/18 15:28:28 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:46:31 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	    	ft_atoi(const char *str);
 size_t		ft_strlen(const char *s);
 int     	input_control(char **input);
 void    	select_num_space(char *argv, t_list **a);
+void 		error_msg();
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_front(t_list **list, t_list *new);
 void		ft_lstadd_back(t_list **lst, t_list *new);
