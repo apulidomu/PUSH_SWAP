@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:18:10 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/19 17:21:31 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/19 18:07:22 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,30 @@ int main(int argc, char **argv)
         }
     }
 	ft_lstiter(a);
-	push_pb(&a, &b);
-	push_pb(&a, &b);
 	ft_lstiter(a);
-	ft_lstiter(b);
-	reverse_rotate_rrr(&a, &b);
-	ft_lstiter(a);
-	ft_lstiter(b);
+	check_order(a);
+}
+
+void check_order(t_list *lst)
+{
+	int control;
+
+	control = 0;
+	if (lst != NULL)
+	{
+		while (lst != NULL)
+		{
+			if((lst)->n < (lst)->next->n && (lst)->next != NULL)
+				control = 1;
+			else
+			{
+				control = 0;
+				break;
+			}
+			lst = lst->next;
+		}
+	}
+	if(control == 1)
+		exit(-1);
 }
 

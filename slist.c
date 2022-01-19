@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:29:58 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/11 17:29:28 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/01/19 17:34:57 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_list *full_a(char *input, t_list **a)
 	}
 	return *(a);
 }
+
 void ft_lstiter(t_list *lst)
 {
 	if (lst != NULL)
