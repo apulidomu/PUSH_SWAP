@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2022/01/19 17:18:44 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/01 16:04:50 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int input_control(char **input)
 			validate = 1;
 			error_msg();
 		}
-		printf("INPUT: %s\n", input[i]);
+		//printf("INPUT: %s\n", input[i]);
 		i++;
     }
 	i = 1;
@@ -50,12 +50,12 @@ int input_control(char **input)
 						}
 				}
         	}
-			printf("CHAR INPUT: %c, %d  ", input[i][j], validate);
+			//printf("CHAR INPUT: %c, %d  ", input[i][j], validate);
         	j++;
     	}
 		i++;
 	}
-	printf("VALOR VALIDATE: %d\n", validate);	
+	//printf("VALOR VALIDATE: %d\n", validate);	
     return (validate);
 }
 
@@ -103,4 +103,24 @@ int check_space(char *argv)
         i++;
     }
     return(0);
+}
+
+void check_repeat(t_list *a, int num)
+{
+	int control;
+
+	control = 0;
+	if(a != NULL)
+	{
+		while(a->next != NULL)
+		{
+			if(a->n == num)
+			{
+				control = 1;
+			}
+			a = a->next;
+		}
+		if(control == 1)
+			error_msg();
+	}
 }
