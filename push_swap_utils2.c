@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2022/02/03 14:58:37 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/03 15:26:21 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void select_num_space(char *argv, t_list **a)
         i++;
     while(argv[i])
     {
-        if(argv[i] == 32 && argv[i - 1] != 32)
+        if(argv[i] == 32 && argv[i - 1] > '0' && argv[i - 1] < '9')
         {
             num = ft_substr(argv, (i - s), s);
 			*a = full_a(num, a);
@@ -84,7 +84,7 @@ void select_num_space(char *argv, t_list **a)
         i++;
     }
 	
-	if(argv[i] == '\0' && argv[i - 1] > '0' && argv[i -1] < '9')
+	if(argv[i] == '\0' && argv[i - 1] > '0' && argv[i - 1] < '9')
 	{
 		printf("HOLA HOLAAAAA");
 		num = ft_substr(argv, (i - s), s);

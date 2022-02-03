@@ -6,12 +6,11 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:29:58 by apulido-          #+#    #+#             */
-/*   Updated: 2022/02/03 14:13:53 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/03 16:40:40 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void ft_lstiter(t_list *lst);
 
 t_list *full_a(char *input, t_list **a)
 {
@@ -29,11 +28,11 @@ t_list *full_a(char *input, t_list **a)
 	return *(a);
 }
 
-void ft_lstiter(t_list *lst)
+void ft_lstiter(t_list *lst, char *titulo)
 {
 	if (lst != NULL)
 	{
-		printf("\nLista a:\n");
+		printf("\n%s\n", titulo);
 		while (lst != NULL)
 		{
 			printf("%d\n", (lst)->n);
