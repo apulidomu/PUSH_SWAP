@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2022/02/01 16:04:50 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/03 14:58:37 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int input_control(char **input)
 						}
 				}
         	}
-			//printf("CHAR INPUT: %c, %d  ", input[i][j], validate);
+			printf("CHAR INPUT: %c, %d  ", input[i][j], validate);
         	j++;
     	}
 		i++;
@@ -83,44 +83,18 @@ void select_num_space(char *argv, t_list **a)
         s++;
         i++;
     }
+	
+	if(argv[i] == '\0' && argv[i - 1] > '0' && argv[i -1] < '9')
+	{
+		printf("HOLA HOLAAAAA");
+		num = ft_substr(argv, (i - s), s);
+		*a = full_a(num, a);
+	}
+
 }
 
 void select_num_nospace(char *argv, t_list **a)
 {
 	*a = full_a(argv, a);
-    //printf("NUM = %s:\n", argv);
-}
-
-int check_space(char *argv)
-{
-    int i;
-
-    i = 0;
-    while(argv[i])
-    {
-        if(argv[i] == 32)
-            return (1);
-        i++;
-    }
-    return(0);
-}
-
-void check_repeat(t_list *a, int num)
-{
-	int control;
-
-	control = 0;
-	if(a != NULL)
-	{
-		while(a->next != NULL)
-		{
-			if(a->n == num)
-			{
-				control = 1;
-			}
-			a = a->next;
-		}
-		if(control == 1)
-			error_msg();
-	}
+    printf("NUM = %s:\n", argv);
 }
