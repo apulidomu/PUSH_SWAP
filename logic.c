@@ -6,13 +6,14 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:13:01 by apulido-          #+#    #+#             */
-/*   Updated: 2022/02/14 16:06:13 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/14 16:31:36 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 void logic_size_3(t_list **a);
 void logic_size_4(t_list **a, t_list **b);
+void logic_size_5(t_list **a, t_list **b);
 
 void chose_logic(t_list **a, t_list **b)
 {
@@ -25,6 +26,8 @@ void chose_logic(t_list **a, t_list **b)
 		logic_size_3(a);
 	if(size == 4)
 		logic_size_4(a, b);
+	if(size == 5)
+		logic_size_5(a, b);
 }
 
 void logic_size_3(t_list **a)
@@ -52,3 +55,10 @@ void logic_size_4(t_list **a, t_list **b)
 	push_pa(a, b);
 }
 
+void logic_size_5(t_list **a, t_list **b)
+{
+	move_lst_tolowest(a);
+	push_pb(a, b);
+	logic_size_4(a, b);
+	push_pa(a, b);
+}
