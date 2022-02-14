@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:24:42 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/18 15:35:59 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/14 16:02:05 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void push_pa(t_list **a, t_list **b)
 
 	if(ft_lstsize(*a) > 0)
 	{
-		aux = *a;
-		*a = (*a)->next;
-		ft_lstadd_front(b, aux);
+		aux = *b;
+		*b = (*b)->next;
+		ft_lstadd_front(a, aux);
 		write(1, "pa\n", 3);
 	}
 }

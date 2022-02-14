@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:39:52 by alex              #+#    #+#             */
-/*   Updated: 2022/02/03 15:26:21 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:23:35 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int input_control(char **input)
 						}
 				}
         	}
-			printf("CHAR INPUT: %c, %d  ", input[i][j], validate);
+			//printf("CHAR INPUT: %c, %d  ", input[i][j], validate);
         	j++;
     	}
 		i++;
@@ -86,7 +86,7 @@ void select_num_space(char *argv, t_list **a)
 	
 	if(argv[i] == '\0' && argv[i - 1] > '0' && argv[i - 1] < '9')
 	{
-		printf("HOLA HOLAAAAA");
+		//printf("HOLA HOLAAAAA");
 		num = ft_substr(argv, (i - s), s);
 		*a = full_a(num, a);
 	}
@@ -96,5 +96,5 @@ void select_num_space(char *argv, t_list **a)
 void select_num_nospace(char *argv, t_list **a)
 {
 	*a = full_a(argv, a);
-    printf("NUM = %s:\n", argv);
+    //printf("NUM = %s:\n", argv);
 }

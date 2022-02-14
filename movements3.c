@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:30:52 by apulido-          #+#    #+#             */
-/*   Updated: 2022/01/18 15:32:02 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:28:15 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void reverse_rotate_rrb(t_list **b)
 			aux = aux->next;
 		aux->next = NULL;
 		ft_lstadd_front(b, last);
-		write(1, "rra\n", 4);
+		write(1, "rrb\n", 4);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:18:10 by apulido-          #+#    #+#             */
-/*   Updated: 2022/02/03 16:41:22 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/14 14:41:48 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int main(int argc, char **argv)
         }
     }
 	check_order(a);
-	ft_lstiter(a, "lista a:");
+	//ft_lstiter(a, "lista a:");
 	chose_logic(&a, &b);
 	ft_lstiter(a, "lista a:");
-	ft_lstiter(b, "lista b:");
+	//ft_lstiter(b, "lista b:");
 }
 
