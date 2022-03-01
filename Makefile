@@ -6,7 +6,7 @@
 #    By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 14:03:21 by apulido-          #+#    #+#              #
-#    Updated: 2022/02/14 15:42:30 by apulido-         ###   ########.fr        #
+#    Updated: 2022/02/17 16:51:36 by apulido-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ CFLAGS	= -Wall -Werror -Wextra
 all		:		$(NAME)
 
 $(NAME)	:	$(OBJS)
-				$(CC)	$(OBJS) -o $(NAME) -fsanitize=address
+				$(CC)	$(OBJS) -o $(NAME)
 
 %.o:		%.c
 				$(CC) $(SFLAGS) -c $< -o $@

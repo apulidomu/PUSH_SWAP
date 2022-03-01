@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:30:09 by apulido-          #+#    #+#             */
-/*   Updated: 2022/02/14 16:05:18 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/02/22 15:00:55 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ void 		check_order(t_list *lst);
 int			check_order_logic(t_list *lst);
 void 		check_repeat(t_list *a, int num);
 
+char		*full_num_string(t_list **lst);
 void		chose_logic(t_list **a, t_list **b);
+int			*select_3lowest_nums(t_list **a);
+
 void 		move_lst_tolowest(t_list **lst);
 
 void 		swap_sa(t_list **a);

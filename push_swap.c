@@ -6,7 +6,7 @@
 /*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:18:10 by apulido-          #+#    #+#             */
-/*   Updated: 2022/02/14 14:41:48 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:03:45 by apulido-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int main(int argc, char **argv)
     int 	control;
 	t_list 	*a;
 	t_list 	*b;
+	int *nums;
+
 	
 	a = 0;
 	b = 0;
@@ -44,8 +46,18 @@ int main(int argc, char **argv)
     }
 	check_order(a);
 	//ft_lstiter(a, "lista a:");
+	//chose_logic(&a, &b);
+	ft_lstiter(a, "lista a:");
 	chose_logic(&a, &b);
 	ft_lstiter(a, "lista a:");
+	ft_lstiter(b, "lista b:");
+	// while(x < 3)
+	// {
+	// 	printf("%d, ", nums[x]);
+	// 	x++;
+	// }
+	//full_num_string(&a);
+	//free(nums);
 	//ft_lstiter(b, "lista b:");
 }
 
