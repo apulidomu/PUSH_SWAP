@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   logic_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:42:10 by apulido-          #+#    #+#             */
-/*   Updated: 2022/02/17 17:52:13 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/03/09 13:28:11 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,16 @@ char *full_num_string(t_list **lst)
 		printf("%c", nums[i]);
 	}
 	return(nums);
+}
+
+int check_order_reverse(t_list **lst)
+{
+	int check;
+
+	check = 1;
+	if((*lst)->n > (*lst)->next->n && (*lst)->next->n > (*lst)->next->next->n)
+	{
+		check = 0;
+	}
+	return (check);
 }

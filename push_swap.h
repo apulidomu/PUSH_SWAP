@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:30:09 by apulido-          #+#    #+#             */
-/*   Updated: 2022/02/22 15:00:55 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/03/09 13:28:45 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void 		select_num_nospace(char *argv, t_list **a);
 void 		check_order(t_list *lst);
 int			check_order_logic(t_list *lst);
 void 		check_repeat(t_list *a, int num);
+int         check_order_reverse(t_list **lst);
 
 char		*full_num_string(t_list **lst);
 void		chose_logic(t_list **a, t_list **b);
