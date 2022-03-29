@@ -6,18 +6,21 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:13:01 by apulido-          #+#    #+#             */
-/*   Updated: 2022/03/09 16:16:48 by alex             ###   ########.fr       */
+/*   Updated: 2022/03/14 19:52:28 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 void logic_size_3(t_list **a);
+void logic_size_3_reverse(t_list **a, t_list **b);
 void logic_size_4(t_list **a, t_list **b);
 void logic_size_5(t_list **a, t_list **b);
 void move_to_b(t_list **a, t_list **b, int *lowest);
 t_list **move_from_up(int num, t_list **a, t_list **b);
 t_list **move_from_down(int num, t_list **a, t_list **b);
 int len_size(int *nums);
+int *position(t_list **a, int *lowest);
+void moveto_b2(t_list **a, t_list **b, int *lowest, int *position);
 
 
 
@@ -72,7 +75,7 @@ void logic_size_3_reverse(t_list **a, t_list **b)
 		else
 			push_pb(a, b);
 	}
-	else if(check_order_reverse(b) != 0)
+	else 
 	{
 		push_pa(a, b);
 		if((*b)->n < (*b)->next->n)
@@ -99,24 +102,26 @@ void logic_size_5(t_list **a, t_list **b)
 {
 	int i;
 	int *nums;
+	int *position_nums;
 
 	i = 0;
-	if(ft_lstsize(*a) > 1)
-	{
-
 	while(ft_lstsize(*a) > 1)
 	{
 		nums = select_3lowest_nums(a);
-		move_to_b(a, b, nums); 
+		position_nums = position(a, nums);
+		moveto_b2(a, b, nums, position_nums);
+		//move_to_b(a, b, nums); 
 		logic_size_3_reverse(a, b);
-		free(nums);
+		//free(nums);
+		//free(position_nums);
 		i++;
 	}
-	}
-	while(ft_lstsize(*b) > 0)
-	{
-		push_pa(a, b);
-	}
+	push_pb(a, b);
+	logic_size_3_reverse(a, b);
+	// while(ft_lstsize(*b) > 0)
+	// {
+	// 	push_pa(a, b);
+	// }
 	
 }
 
@@ -196,11 +201,11 @@ int *select_3lowest_nums(t_list **a)
 			aux = aux->next;
 		}
 	}
-	// while(i < 3)
-	// {
-	// 	printf("N%d = %d ///////",i, lowest[i]);
-	// 	i++;
-	// }
+	while(i < 3)
+	{
+		printf("N%d = %d ///////",i, lowest[i]);
+		i++;
+	}
 	return (lowest);
 }
 
@@ -300,4 +305,110 @@ t_list **move_from_down(int num, t_list **a, t_list **b)
 	}
 	push_pb(a, b);
 	return(a);
+}
+
+int *position(t_list **a, int *lowest)
+{
+	int *lowest_position;
+	t_list *aux;
+	int position;
+
+	aux = *a;
+	lowest_position = (int*)malloc(3 * sizeof(int));
+		if(!lowest_position)
+			return (NULL);
+	while(aux != NULL)
+	{
+		if(aux->n == lowest[0])
+		{
+			lowest_position[0] = position;
+			
+			position++;
+		}
+		else if(aux->n == lowest[1])
+		{
+			lowest_position[1] = position;
+			
+			position++;
+		}
+		else if(aux->n == lowest[2])
+		{
+			lowest_position[2] = position;
+			
+			position++;
+		}
+		aux = aux->next;
+		position++;
+
+	}
+	int i;
+	i = 0;
+		while(i < 3)
+	{
+		printf("PP:%d = %d ///////",i, lowest[i]);
+		i++;
+	}
+	return (lowest_position);
+}
+
+void moveto_b2(t_list **a, t_list **b, int *lowest, int *position)
+{
+	int middle;
+	int pointsdown;
+	int pointsup;
+	int i;
+	int x;
+	int countdown;
+
+	countdown = 0;
+	x = 0;
+	i = 0;
+	middle = ft_lstsize(*a)/2;
+	if(len_size(lowest) < 3)
+	{
+		while(x < len_size(lowest))
+		{
+			push_pb(a, b);
+			x++;
+		}
+			
+	}
+	else
+	{
+
+		while(i < 3)
+		{
+			if(position[i] >= middle)
+				pointsup++;
+			else
+				pointsdown++;
+			i++;
+		}
+		if(pointsdown > pointsup)
+		{
+			while(countdown != 3)
+			{
+				if((*a)->n == lowest[0] ||(*a)->n == lowest[1] ||(*a)->n == lowest[2])
+				{
+					push_pb(a, b);
+					countdown++;
+				}
+				else
+					reverse_rotate_rra(a); 
+			}
+		}
+		else
+		{
+			while(countdown != 3)
+			{
+				if((*a)->n == lowest[0] ||(*a)->n == lowest[1] ||(*a)->n == lowest[2])
+				{
+					push_pb(a, b);
+					countdown++;
+				}
+				else
+					rotate_ra(a); 
+			}
+		}
+	}
 }

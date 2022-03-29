@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apulido- <apulido-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:18:10 by apulido-          #+#    #+#             */
-/*   Updated: 2022/03/01 15:03:45 by apulido-         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:44:01 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int main(int argc, char **argv)
 	ft_lstiter(a, "lista a:");
 	chose_logic(&a, &b);
 	ft_lstiter(a, "lista a:");
+	ft_lstiter(b, "lista b:");
+	logic_size_3_reverse(&a, &b);
 	ft_lstiter(b, "lista b:");
 	// while(x < 3)
 	// {

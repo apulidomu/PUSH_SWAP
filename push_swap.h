@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:30:09 by apulido-          #+#    #+#             */
-/*   Updated: 2022/03/09 13:28:45 by alex             ###   ########.fr       */
+/*   Updated: 2022/03/14 19:44:55 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int         check_order_reverse(t_list **lst);
 char		*full_num_string(t_list **lst);
 void		chose_logic(t_list **a, t_list **b);
 int			*select_3lowest_nums(t_list **a);
-
+void        logic_size_3_reverse(t_list **a, t_list **b);
 void 		move_lst_tolowest(t_list **lst);
 
 void 		swap_sa(t_list **a);

@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:42:10 by apulido-          #+#    #+#             */
-/*   Updated: 2022/03/09 13:28:11 by alex             ###   ########.fr       */
+/*   Updated: 2022/03/14 19:38:13 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int check_order_reverse(t_list **lst)
 	int check;
 
 	check = 1;
-	if((*lst)->n > (*lst)->next->n && (*lst)->next->n > (*lst)->next->next->n)
+	if(((*lst)->n > (*lst)->next->n) && ((*lst)->next->n > (*lst)->next->next->n))
 	{
 		check = 0;
 	}
